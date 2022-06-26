@@ -3,4 +3,5 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 
 ## Exercises
 * **CircularQueue**: Multithreading in Java
-* **RemoteCounter**: Proxy Skeleton Architecture
+* **RemoteCounter**: Proxy Skeleton Architecture UDP
+* **RemoteCounterDelegation_TCP**: Proxy Skeleton TCP
