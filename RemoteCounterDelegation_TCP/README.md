@@ -1,18 +1,9 @@
-## Getting Started
+## Remote Counter TCP
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Application based on the Proxy Skeleton pattern. It uses TCP sockets for sending requests (commands and parameters) and responses (results).
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Methods
+* **get**: it gets current value of counter
+* **sqr**: it squares the counter value
+* **inc**: it increment by one the actual value of counter
+* **sum**: it make a sum between counter and a value
