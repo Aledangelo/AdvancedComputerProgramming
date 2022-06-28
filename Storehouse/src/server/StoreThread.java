@@ -2,6 +2,7 @@ package server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
@@ -37,9 +38,9 @@ public class StoreThread extends Thread {
                 case "withdraw":
                     System.out.println("[Thread Store] - WITHDRAW: " + item);
                     int x = store.withdraw(item);
-                    PrintStream fileOut = new PrintStream("./storeLog.txt");
+                    PrintStream fileOut = new PrintStream(new FileOutputStream("./storeLog.txt"));
                     fileOut.println("ID: " + x);
-                    fileOut.close();
+                    
                     out.writeInt(x);
                     break;
                 default:
