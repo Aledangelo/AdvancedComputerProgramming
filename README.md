@@ -10,3 +10,4 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **RemoteWhiteboard**: Java RMI
 * **BankOffice**: Java RMI - Semaphore
 * **RemotePrinter**: Java RMI - Proxy/Skeleton
+* **RemoteAlert**: Java RMI - Proxy/Skeleton
