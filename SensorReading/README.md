@@ -1,18 +1,6 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+# Sensor Reading
+![alt text](https://raw.githubusercontent.com/Aledangelo/AdvancedComputerProgramming/main/SensorReading/diagram.png)
+System for distributed notification of sensor readings (Reading instances) based on the Observer and JavaRMI pattern. The system consists of the following entities:
+* **Generator**: Start 3 threads. Each thread executes 3 Java RMI invocations of *setReading* on the Dispatcher, passing an instance of Reading; the thread waits 5 seconds between two successive *setReading* invocations. The Reading instances are composed of) the type field (String), chosen randomly between “temperature” or “pressure”, and ii) value field, generated randomly between 0 and 50.
+* **Observer**: subscribe to the Dispatcher (Java RMI attach method) to receive notification of the readings associated with a certain type. To this end, the attach method - in addition to the type of reading of interest (ie a string indicating "temperature" or "pressure") - requires that the remote reference of a callback object (instance of ObserverImpl, as shown in figure) intended to receive notifications from the Dispatcher, as specified below.
+* **Dispatcher**: The "status" of the Dispatcher (subject) is represented by an instance of Reading. At each *setReading*, the Dispatcher checks the type field of the received Reading instance: if there are Observers subscribed for readings of that type, they must be notified by the Dispatcher. To this end, the Dispatcher will invoke the *notifyReading* callback method provided on the Observer side. The *setReading* offered by Dispatcher lasts a randomly chosen time between 1 and 5 seconds; the Dispatcher manages concurrent invocations of *setReading* in mutual exclusion. Upon invocation of *notifyReading*, ObserverImpl i) retrieves the current instance of Reading by invoking the getReading method on Dispatcher, and ii) saves the value associated with the reading obtained on file.
