@@ -11,3 +11,4 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **BankOffice**: Java RMI - Semaphore
 * **RemotePrinter**: Java RMI - Proxy/Skeleton
 * **RemoteAlert**: Java RMI - Proxy/Skeleton
+* **SensorReading**: Java RMI
