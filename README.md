@@ -12,4 +12,5 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **RemotePrinter**: Java RMI - Proxy/Skeleton
 * **RemoteAlert**: Java RMI - Proxy/Skeleton
 * **SensorReading**: Java RMI
-* **Storage**: Java JMS
+* **Storage**: Java JMS (Queue)
+* **SensorManager**: Java JMS (Publish/Subscribe)
