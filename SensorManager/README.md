@@ -1,0 +1,5 @@
+# Sensor Manager
+![alt text](https://raw.githubusercontent.com/Aledangelo/AdvancedComputerProgramming/main/SensorManager/diagram.png)
+Distributed system for remote control of sensors based on JMS and the Publish / Subscribe paradigm. The system consists of:
+* **Control Station (*publisher*)**: The ControlStation publishes N JMS messages: each message is received by all Sensors subscribed to the ControlStation. A message contains 1 command that will be executed by the receiving sensor. The possible commands are: startSensor, stopSensor, read. The ControlStation publishes 1 message per second (the command to insert in the JMS message is chosen randomly).
+* **Sensor (*subscriber*)**: Implement asynchronous receive. For each message received, Sensor creates a new thread, TManager, responsible for inserting the command received in a circular queue of size D. A dedicated Sensor thread, called TExecutor, empties the queue at regular intervals of 10 seconds; the commands taken from the queue are saved in the CmdLog.txt file. Access to the queue respects the constraints of the producer / consumer problem.
