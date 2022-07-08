@@ -1,0 +1,7 @@
+# Logger
+![alt text](https://raw.githubusercontent.com/Aledangelo/AdvancedComputerProgramming/main/Logger/diagram.png)
+
+Storage system based on JMS and UDP sockets. The system consists of:
+* **Client**: System user. The Client requests the saving of a data (ie an int between 0 and 100) and indicates the "LoggerServer" port (ie the entity - reachable via UDP socket - ultimately responsible for storing the data on file, as described in below) shown in Figure. The Client requests a save by sending a JMS MapMessage containing 1) the data to be saved and 2) the LoggerServer port, both specified by prompt and then inserted in the JMS message.
+* **Disk**: Implementa un meccanismo di ricezione asincrona. Alla ricezione di un MapMessage dal Client, il listener dei messaggi di Disk avvia un thread che estrae dal messaggio dato e porta. Il thread 1) mostra a video il dato, e 2) invoca il metodo void registraDato(int dato) specificato dall’interfaccia ILogger fornita dal LoggerServer. Disk invoca registraDato di LoggerServer tramite un proxy UDP.
+* **Logger**: Registra su file i dati passati da Disk. Esso è un server multithread su socket UDP basato su Proxy-Skeleton. Espone l’interfaccia ILogger –come in Figura– con il relativo metodo void registraDato(int dato), che mostra il dato a video e lo salva su file. Il metodo registraDato è eseguito in mutua esclusione. LoggerServer è avviato da prompt specificando la porta.
