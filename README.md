@@ -14,3 +14,4 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **SensorReading**: Java RMI
 * **Storage**: Java JMS (Queue)
 * **SensorManager**: Java JMS (Publish/Subscribe)
+* **Logger**: Java JMS (Queue)
