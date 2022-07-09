@@ -15,3 +15,4 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **Storage**: Java JMS (Queue)
 * **SensorManager**: Java JMS (Publish/Subscribe)
 * **Logger**: Java JMS (Queue)
+* **Agency**: Java RMI - Proxy/Skeleton
