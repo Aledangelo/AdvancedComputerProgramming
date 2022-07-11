@@ -16,4 +16,5 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **SensorManager**: Java JMS (Publish/Subscribe)
 * **Logger**: Java JMS (Point-to-Point)
 * **Agency**: Java RMI - Proxy/Skeleton
-* **StoreHouse-JMS-RMI**: Java JMS (Point-to-Point) - Java Rmi
+* **StoreHouse-JMS-RMI**: Java JMS (Point-to-Point) - Java RMI
+* **Printer-RMI-JMS**: Java JMS (Publish/Subscriber) - Java RMI
