@@ -1,0 +1,8 @@
+# Printer JMS - RMI
+![alt text](https://raw.githubusercontent.com/Aledangelo/AdvancedComputerProgramming/main/Printer-RMI-JMS/diagram.png)
+System for managing a remote printer (Printer in Figure) based on JMS and Java RMI. The system consists of:
+* **Client**: Generate print requests. A request consists in sending a JMS message from Client to Dispatcher via the "PrintRequest" JMS Destination. The request is characterized by 1) docName (String) and 2) printerName (String), which is the symbolic name with which Printer is identified in the RMI registry. Use the JMS MapMessages to send the docName-printerName pair to the Dispatcher. The Client generates 5 messages. For each message, docName is generated randomly by appending an integer between 0 and 40 to the string “doc”; PrinterName is fixed, and must be specified as a prompt when starting the Client.
+* **Dispatcher**: Implement JMS asynchronous reception. Upon receipt of each MapMessage, the Dispatcher JMS listener starts a thread that extracts the docName and printerName from message. The thread shows docName on the screen, uses printerName to perform a Printer "lookup", and invokes *void printDoc(String)* method specified by the IPrinter interface, passing docName.
+* **Printer**: Provides the remote IPrinter interface and its *void printDoc(String)* method. The printDoc method shows docName on the screen and stores it on file (as in Figure); the invocation of printDoc lasts 5 seconds. The printDoc method is executed in mutual exclusion; the symbolic name of Printer is specified by a prompt when starting the program.
+
+Method of carrying out: JMS Topic, Lock
