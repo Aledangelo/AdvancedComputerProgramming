@@ -1,0 +1,5 @@
+# Calculator
+Computing system based on JMS (Point-to-Point). The system is composed of the following entities:
+* **Client**: spawn 10 threads. Each of which waits for a time t (t chosen at random between 1 and 5 seconds) and sends a MapMessage containing the type of operation to be performed (sum or mul) and two operands. Messages are sent on the REQUEST queue, operation and operands are generated randomly. The thread waits for the result of the operation on one of the REPLSUM or REPLMUL queues. Reception is synchronous.
+* **ComputeUnit**: As each message arrives, ComputeUnit spawns a thread that extracts parameters from the JMS message. Reception is asynchronous. The thread calls the *int getResult(String, int, int)* method of the *Compute* object which returns the result of the operation. After that, it sends the result to the client on one of the REPLSUM or REPLMUL queues.
+* **Compute**: Offers the *getResult* method. The execution of the method lasts a time chosen at random between 1 and 5 seconds. The method prints the operation on the screen and writes the results to a file. At most 5 threads at a time can invoke the *getResult* method concurrently.
