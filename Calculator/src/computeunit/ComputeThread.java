@@ -32,6 +32,9 @@ public class ComputeThread extends Thread {
 			
 			reply.setInt("res", res);
 			sender.send(reply);
+			
+			sender.close();
+			session.close();
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}

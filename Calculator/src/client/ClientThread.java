@@ -70,12 +70,17 @@ public class ClientThread extends Thread {
 			msg.setJMSReplyTo(reply);
 			sender.send(msg);
 			
+			sender.close();
+			
 			QueueReceiver recv = session.createReceiver(reply);
 			MapMessage response = session.createMapMessage();
 			response = (MapMessage) recv.receive();
 			
 			System.out.println("[ClientThread] Response: " + response.getInt("res"));
 			
+			
+			recv.close();
+			session.close();
 		} catch (NamingException e) {
 			e.printStackTrace();
 		} catch (JMSException e) {
