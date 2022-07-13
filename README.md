@@ -9,6 +9,7 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **Dispatcher**: Proxy/Skeleton TCP - Producer/Consumer on Queue
 * **Storehouse**: Proxy/Skeleton TCP - Producer/Consumer on Queues
 * **RemoteWhiteboard**: Java RMI
+* **MessagingRMI-PUB-SUB**: Java RMI
 * **BankOffice**: Java RMI - Semaphore
 * **RemotePrinter**: Java RMI - Proxy/Skeleton
 * **RemoteAlert**: Java RMI - Proxy/Skeleton
