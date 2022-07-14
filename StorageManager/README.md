@@ -1,0 +1,5 @@
+# Storage Manager
+System for the management of electronic warehouses. The system consists of 3 entities:
+* **Storage**: offers the *boolean deposit(int item)* service. At start it subscribes itself to the Broker using the *subscribe* service. A deposit is invoked by the Manager through the *deposit* method. Each invocation of this method lasts a random time between 5 and 10 seconds, prints the item on the screen, saves it on file and returns a **true** result. Only one thread can execute the *deposit* method at a time. If the storage is already processing a request, the other threads have to wait.
+* **Manager**: it receives client requests via the *boolean depositRequest(int item)* method. The manager has a storage list sorted by subscription order. At each invocation of the *depositRequest* method, the manager chooses a storage using *round-robin*.
+* **Client**: it generates 10 threads, each of which, at the expiration of a randomly chosen time between 1 and 3 seconds, invokes *depositRequest*. Each thread generates 5 requests. the value of **item** is chosen randomly between 1 and 100.
