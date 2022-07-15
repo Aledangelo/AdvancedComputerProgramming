@@ -22,3 +22,4 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **StorageManager**: Java RMI - Proxy/Skeleton
 * **StoreHouse-JMS-RMI**: Java JMS (Point-to-Point) - Java RMI
 * **Printer-RMI-JMS**: Java JMS (Publish/Subscriber) - Java RMI
+* **Printer-JMS-PS**: Java JMS (Publish/Subscribe) - Proxy/Skeleton
