@@ -18,8 +18,8 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **Storage**: Java JMS (Point-to-Point)
 * **Calculator**: Java JMS (Point-to-Point)
 * **SensorManager**: Java JMS (Publish/Subscribe)
-* **Logger**: Java JMS (Point-to-Point) - Proxy/Skeleton
-* **Agency**: Java RMI - Proxy/Skeleton UDP
+* **Logger**: Java JMS (Point-to-Point) - Proxy/Skeleton UDP
+* **Agency**: Java RMI - Proxy/Skeleton TCP
 * **StorageManager**: Java RMI - Proxy/Skeleton
 * **StoreHouse-JMS-RMI**: Java JMS (Point-to-Point) - Java RMI
 * **Printer-RMI-JMS**: Java JMS (Publish/Subscriber) - Java RMI
