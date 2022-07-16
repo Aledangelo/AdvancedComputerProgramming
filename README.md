@@ -14,6 +14,7 @@ This is a collection of exercises for the **Advanced Computer Programming** univ
 * **BankOffice-Proxy-Skeleton**: Proxy/Skeleton UDP
 * **RemotePrinter**: Java RMI - Proxy/Skeleton
 * **RemoteAlert**: Java RMI - Proxy/Skeleton
+* **RemoteAlertJMS**: Java JMS - Proxy/Skeleton
 * **SensorReading**: Java RMI
 * **Storage**: Java JMS (Point-to-Point)
 * **Calculator**: Java JMS (Point-to-Point)
