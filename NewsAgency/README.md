@@ -1,0 +1,6 @@
+# News Agency
+The system consists of 4 entities:
+* **NewsAgency**: it uses the *pubNews(String news, String type)* method provided by a remote *IServerNews* object implemented with java RMI. It generates 5 random news items whose message is "News" + a random number from 0 to 100. The type is instead provided by the terminal when the program is started and can be chosen between "sport" and "finance".
+* **ServerNews**: it implements the *IServerNews* remote interface with java RMI. It then provides the *pubNews(String news, String type)* method. When it receives a request, the *pubNews* method creates a thread, which manages two topics, Sport and Finance, through ActiveMQ and JMS and, based on the "type" indicated in the request, publishes the message on one topic or the other one. The *pubNews* method must be accessible in mutual exclusion with the use of synchronized methods.
+* **FeedSport**: it subscribes itself to the receipt of messages belonging to the Sport topic asynchronously. Upon receipt of the message, it prints it on the screen and inserts it in a "sport.txt" file.
+* **FeedFinance**: it subscribes itself to the receipt of messages belonging to the Finance topic asynchronously. Upon receipt of the message, it prints it on the screen and inserts it in a "finance.txt" file.

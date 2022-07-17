@@ -1,0 +1,2 @@
+module NewsAgency {
+}
